@@ -1,0 +1,6 @@
+PearXLib.GTK/obj/*
+PearXLib.GTK/bin/*
+.vs/*
+.directory
+*.userprefs
+packages/*
