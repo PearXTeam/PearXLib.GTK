@@ -1,53 +1,80 @@
-﻿using System.Linq;
-using Gtk;
+﻿using Gtk;
 
 namespace PearXLib.GTK.Controls
 {
+	/// <summary>
+	/// Window with loading bar.
+	/// </summary>
 	public class LoadableWindow : PXWindow
 	{
-		public Overlay Overlay = new Overlay();
-		public Frame Fr = new Frame();
-		public Spinner Loading = null;
-		public bool UseDefaultLoading { get; set; } = true;
+		/// <summary>
+		/// Loading overlay.
+		/// </summary>
+		protected Overlay Overlay = new Overlay();
+		/// <summary>
+		/// Loading spinner
+		/// </summary>
+		protected Spinner Loading = new Spinner();
 
+		bool loading;
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:PearXLib.GTK.Controls.LoadableWindow"/> class.
+		/// </summary>
 		public LoadableWindow()
 		{
+			Loading.Expand = false;
+			Overlay.AddOverlay(Loading);
+			Loading.Hide();
 			base.Add(Overlay);
 		}
 
+		/// <summary>
+		/// Starts the loading.
+		/// </summary>
 		public void StartLoading()
 		{
 			Application.Invoke((sender, e) =>
 			{
-				if (UseDefaultLoading && Loading == null)
+				if (!loading)
 				{
-					Loading = new Spinner();
-					Loading.Expand = false;
 					Loading.Start();
+					Overlay.Child.Hide();
+					Loading.Show();
+					loading = true;
 				}
-				Overlay.Child.Hide();
-				if (!Overlay.Children.Contains(Loading))
-					Overlay.AddOverlay(Loading);
-				Loading.ShowAll();
 			});
 		}
 
+		/// <summary>
+		/// Stops the loading.
+		/// </summary>
 		public void StopLoading()
 		{
 			Application.Invoke((sender, e) =>
 			{
-				Loading.Stop();
-				Loading.Hide();
-				Overlay.Child.Show();
+				if (loading)
+				{
+					Loading.Stop();
+					Loading.Hide();
+					Overlay.Child.Show();
+				}
 			});
 		}
 
+		/// <summary>
+		/// Add a widget to the container.
+		/// </summary>
+		/// <param name="w">Widget.</param>
 		public new void Add(Widget w)
 		{
 			Overlay.Add(w);
 		}
 
-
+		/// <summary>
+		/// Removes a widget from the container.
+		/// </summary>
+		/// <param name="w">Widget.</param>
 		public new void Remove(Widget w)
 		{
 			Overlay.Remove(w);
