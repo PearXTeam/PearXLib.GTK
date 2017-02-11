@@ -12,50 +12,18 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="art-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\art-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="atk-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\atk-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="cairo-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\cairo-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="gdk-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\gdk-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="gio-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\gio-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="glib-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\glib-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="gtk-dotnet">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\gtk-dotnet.dll</HintPath>
-    </Reference>
-    <Reference Include="gtk-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\gtk-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="pango-sharp">
-      <HintPath>..\packages\gtk-sharp-3.3.22.1\lib\net40\pango-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -63,20 +31,50 @@
       <HintPath>..\packages\PearXLib.1.2.17\lib\net40\PearXLib.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Linq" />
+    <Reference Include="art-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\art-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="atk-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\atk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="cairo-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\cairo-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdk-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\gdk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gio-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\gio-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="glib-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\glib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-dotnet">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\gtk-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\gtk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="pango-sharp">
+      <HintPath>..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\lib\net40\pango-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PXWindow.cs" />
-    <Compile Include="LoadableWindow.cs" />
+    <Compile Include="Controls\CenterLabel.cs" />
+    <Compile Include="Controls\RightLabel.cs" />
+    <Compile Include="ModelExtensions.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="DialogUtils.cs" />
+    <Compile Include="ImageDialog.cs" />
+    <Compile Include="Controls\PXWindow.cs" />
+    <Compile Include="Controls\LoadableWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Loading.gif" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\gtk-sharp-3.3.22.1\build\net40\gtk-sharp-3.targets" Condition="Exists('..\packages\gtk-sharp-3.3.22.1\build\net40\gtk-sharp-3.targets')" />
@@ -131,4 +129,5 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <Import Project="..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\build\net40\gtk-sharp-3.targets" Condition="Exists('..\..\LargeLauncher_4\packages\gtk-sharp-3.3.22.6.1\build\net40\gtk-sharp-3.targets')" />
 </Project>
