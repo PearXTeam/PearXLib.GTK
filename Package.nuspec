@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PearXLib.GTK</id>
+    <version>1.0.0</version>
+    <authors>PearX Team</authors>
+    <owners>PearX Team</owners>
+    <licenseUrl>https://github.com/PearXTeam/PearXLib.GTK/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/PearXTeam/PearXLib.GTK</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/PearXTeam/PearXLib.GTK/master/logo_pxlgtk.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PearXLib extension with GTK utilities!</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright (c) PearX Team, 2017</copyright>
+    <tags>pearxlib pxl pearxlib gtk pxlgtk pearxlib.gtk pearx gnome</tags>
+    <dependencies>
+      <dependency id="PearXLib" version="1.3.0"/>
+      <dependency id="gtk-sharp-3" version="3.22.6.4"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="PearXLib.GTK/bin/Release/PearXLib.GTK.dll" target="lib/net40" />
+    <file src="PearXLib.GTK/bin/Release/PearXLib.GTK.xml" target="lib/net40" />
+  </files>
+</package>
