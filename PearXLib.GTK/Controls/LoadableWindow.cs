@@ -25,6 +25,7 @@ namespace PearXLib.GTK.Controls
 		{
 			Loading.Expand = false;
 			Overlay.AddOverlay(Loading);
+			Loading.NoShowAll = true;
 			Loading.Hide();
 			base.Add(Overlay);
 		}
