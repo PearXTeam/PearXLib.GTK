@@ -54,7 +54,7 @@
       <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\pango-sharp.dll</HintPath>
     </Reference>
     <Reference Include="PearXLib">
-      <HintPath>..\packages\PearXLib.1.3.2\lib\net40\PearXLib.dll</HintPath>
+      <HintPath>..\packages\PearXLib.1.3.3\lib\net40\PearXLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

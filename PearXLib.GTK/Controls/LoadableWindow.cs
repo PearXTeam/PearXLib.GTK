@@ -16,7 +16,7 @@ namespace PearXLib.GTK.Controls
 		/// </summary>
 		protected Spinner Loading = new Spinner();
 
-		bool loading;
+		bool loading = false;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:PearXLib.GTK.Controls.LoadableWindow"/> class.
@@ -59,6 +59,7 @@ namespace PearXLib.GTK.Controls
 					Loading.Stop();
 					Loading.Hide();
 					Overlay.Child.Show();
+					loading = false;
 				}
 			});
 		}
