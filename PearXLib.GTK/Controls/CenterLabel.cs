@@ -21,6 +21,7 @@ namespace PearXLib.GTK.Controls
 		/// <param name="text">Text.</param>
 		public CenterLabel(string text) : base()
 		{
+			Halign = Align.Center;
 			Text = text;
 		}
 	}

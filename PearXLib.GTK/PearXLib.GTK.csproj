@@ -67,6 +67,7 @@
     <Compile Include="ImageDialog.cs" />
     <Compile Include="Controls\PXWindow.cs" />
     <Compile Include="Controls\LoadableWindow.cs" />
+    <Compile Include="Controls\LeftLabel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

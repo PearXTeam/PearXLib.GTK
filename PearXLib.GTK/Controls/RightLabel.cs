@@ -21,6 +21,7 @@ namespace PearXLib.GTK.Controls
 		/// <param name="txt">Text.</param>
 		public RightLabel(string txt) : base()
 		{
+			Halign = Align.End;
 			Text = txt;
 		}
 	}
